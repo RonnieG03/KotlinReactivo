@@ -1,15 +1,18 @@
 package com.example.demo.model
 
-
+import org.springframework.data.relational.core.mapping.Table
 import javax.persistence.Entity
 import javax.persistence.Id
-
 @Entity
-data class Book(
-    @Id
-    val id: Number,
-    val title: String,
-    val author: String
-    ){
+@Table(name="book")
+data class Book(@Id
+                var id: Number,
+                var tittle: String,
+                var author: String) {
+    constructor() : this(0,"a","") {
+
+    }
+
 
 }
+
